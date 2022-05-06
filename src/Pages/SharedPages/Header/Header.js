@@ -29,7 +29,10 @@ const Header = () => {
 
                                                                       {
                                                                                 user ?
-                                                                                          <Nav.Link className='btn btn-primary text-white' onClick={handleSignOut} >Sign Out</Nav.Link>
+                                                                                          <Nav>
+                                                                                                    <Nav.Link>{user.email}</Nav.Link>
+                                                                                                    <Nav.Link className='btn btn-primary text-white' onClick={handleSignOut}>Sign Out</Nav.Link>
+                                                                                          </Nav>
                                                                                           :
                                                                                           <Nav.Link as={Link} to="login">Login</Nav.Link>
                                                                       }
