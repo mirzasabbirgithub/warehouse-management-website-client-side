@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link, Navigate } from 'react-router-dom';
+import useData from '../Hooks/useData';
 import Item from '../Item/Item';
 
 const Items = () => {
 
-          const [items, setItems] = useState([]);
-          useEffect(() => {
-                    fetch('http://localhost:5000/item')
-                              .then(res => res.json())
-                              .then(data => setItems(data));
-          }, [])
+          const [items, setItems] = useData([]);
+
+          const navigateToManageInventories = event => {
+                    Navigate('/manageinventories');
+          }
           return (
 
                     <div className='container' >
@@ -21,7 +23,9 @@ const Items = () => {
                                                   >
                                                   </Item>)
                                         }
+
                               </div>
+                              <Button className='mt-2'><Link to="/manageinventories" className='text-white pe-auto text-decoration-none' onClick={navigateToManageInventories} >Manage Inventories</Link></Button>
                     </div>
 
           );

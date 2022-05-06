@@ -12,6 +12,7 @@ import ErrorPage from './Pages/SharedPages/ErrorPage/ErrorPage';
 import Login from './LoginPages/Login/Login';
 import Register from './LoginPages/Register/Register';
 import RequireAuth from './LoginPages/RequireAuth/RequireAuth';
+import ManageInventories from './Pages/ManageInventories/ManageInventories';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/inventory/:itemid" element={
+        {/* <Route path="/manageinventories" element={<ManageInventories></ManageInventories>}></Route> */}
+        <Route path="/inventory/:itemId" element={
           <RequireAuth>
             <Inventory></Inventory>
           </RequireAuth>
