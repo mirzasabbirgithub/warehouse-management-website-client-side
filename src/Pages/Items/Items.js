@@ -17,7 +17,7 @@ const Items = () => {
                               <h1 className='text-info text-center mt-2'>Available Books</h1>
                               <div className="row">
                                         {
-                                                  items.map(item => <Item
+                                                  items.slice(0, 6).map(item => <Item
                                                             key={item.id}
                                                             item={item}
                                                   >
