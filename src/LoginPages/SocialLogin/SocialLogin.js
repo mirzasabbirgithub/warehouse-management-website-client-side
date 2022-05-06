@@ -3,7 +3,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 const SocialLogin = () => {
-          const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+          const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
           const navigate = useNavigate();
 
           let getError;
@@ -13,7 +13,7 @@ const SocialLogin = () => {
           }
           if (error) {
                     getError = <div>
-                              <p className='text-danger'>Error: {error.message}</p>
+                              <p className='text-danger'>{error.message}</p>
                     </div>
           }
           return (
@@ -27,7 +27,7 @@ const SocialLogin = () => {
                               <div className=''>
                                         <button
                                                   onClick={() => signInWithGoogle()}
-                                                  className='btn btn-primary w-50 d-block mx-auto my-2'>
+                                                  className='btn btn-success w-50 d-block mx-auto my-2'>
                                                   <span className='px-2'>Sign In with Google Account</span>
                                         </button>
                               </div>

@@ -6,10 +6,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const Register = () => {
           const [
                     createUserWithEmailAndPassword,
-                    // send Verification Email 
           ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
           const navigate = useNavigate();
-          // navigate login page
           const navigateToRegister = () => {
                     navigate('/login');
           }
@@ -45,6 +43,5 @@ const Register = () => {
                     </div>
           );
 };
-
 
 export default Register;
