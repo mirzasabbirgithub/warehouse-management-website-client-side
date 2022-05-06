@@ -1,22 +1,20 @@
 import React from 'react';
-import useData from '../Hooks/useData';
-import ManageInventories from '../ManageInventories/ManageInventories';
+const ManageInventory = ({ item }) => {
+          const { _id, name, img, description, price } = item;
+          console.log(item)
 
-const ManageInventory = () => {
-          const [items, setItems] = useData([]);
           return (
-                    <div className='container' >
-                              <div className="row">
-                                        {
-                                                  items.map(item => <ManageInventories
-                                                            key={item.id}
-                                                            item={item}
-                                                  >
-                                                  </ManageInventories>)
-                                        }
-                              </div>
-                    </div>
+                    <div className="card g-5 col-sm-12 col-md-6 col-lg-4">
+                              <div style={{ width: "18rem" }}>
+                                        < img className='card-img-top' src={img} alt="" />
+                                        <div class="card-body">
+                                                  <h5 className="card-title">{name}</h5>
+                                                  <p className="card-text">Price:{price} BDT</p>
+                                                  <p className="card-text">Description:{description}</p>
+                                                  <button className='btn btn-success'>Delete</button>
+                                        </div>
+                              </div >
+                    </div >
           );
 };
-
 export default ManageInventory;
