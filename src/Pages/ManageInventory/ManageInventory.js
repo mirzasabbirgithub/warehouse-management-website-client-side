@@ -8,9 +8,9 @@ const ManageInventory = () => {
                     <div className='container' >
                               <div className="row">
                                         {
-                                                  items.map(item1 => <ManageInventories
-                                                            key={item1.id}
-                                                            item1={item1}
+                                                  items.map(item => <ManageInventories
+                                                            key={item.id}
+                                                            item={item}
                                                   >
                                                   </ManageInventories>)
                                         }

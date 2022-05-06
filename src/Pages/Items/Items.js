@@ -13,8 +13,8 @@ const Items = () => {
           }
           return (
 
-                    <div className='container' >
-                              <h1 className='text-primary text-center mt-2'>Current Items</h1>
+                    <div className='container gx-5' >
+                              <h1 className='text-info text-center mt-2'>Available Books</h1>
                               <div className="row">
                                         {
                                                   items.map(item => <Item

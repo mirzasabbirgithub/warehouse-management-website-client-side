@@ -15,14 +15,17 @@ const Inventory = () => {
           }, [])
           return (
                     <div >
-                              <h2>Welcome to Inventory Page</h2>
+                              <h2>Selected Item</h2>
                               <Card className='mx-auto w-50' style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={item.img} />
+                                        <Card.Img className='img-fluid mx-auto w-50 ' variant="top" src={item.img} />
                                         <Card.Body>
-                                                  <Card.Title>{item.name}</Card.Title>
-                                                  <Card.Text>
-                                                            Price:{item.price} BDT
-                                                  </Card.Text>
+                                                  <Card.Title className='text-success'>{item.name}</Card.Title>
+                                                  <Card.Text>Description: {item.description}</Card.Text>
+                                                  <Card.Text>Price: {item.price} BDT</Card.Text>
+                                                  <Card.Text>Quantity: <span className='text-danger'>{item.quantity}</span></Card.Text>
+                                                  <Card.Text>Supplier: {item.supplier}</Card.Text>
+                                                  <Card.Text>Total Sold: {item.sold}</Card.Text>
+
                                                   <Button className='mb-2' variant="primary">Delivered</Button><br></br>
                                                   <Button variant="primary">Restock</Button>
                                         </Card.Body>

@@ -1,6 +1,5 @@
 import React from 'react';
 const ManageInventories = (props) => {
-          console.log(props);
           const { _id, name, img, description, price } = props.item;
 
           return (
