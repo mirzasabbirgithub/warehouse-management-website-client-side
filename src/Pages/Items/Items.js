@@ -5,8 +5,7 @@ const Items = () => {
 
           const [items, setItems] = useState([]);
           useEffect(() => {
-                    //tempData for test only before adding mongodb
-                    fetch('tempData.json')
+                    fetch('http://localhost:5000/item')
                               .then(res => res.json())
                               .then(data => setItems(data));
           }, [])

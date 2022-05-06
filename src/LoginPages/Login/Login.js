@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
@@ -25,7 +25,6 @@ const Login = () => {
                     return;
           }
 
-          // navigate current page instead of home page
           if (user) {
                     navigate('/home');
           }
@@ -40,7 +39,6 @@ const Login = () => {
                     signInWithEmailAndPassword(email, password);
           }
 
-          // sent reset email with toast notification
           const resetPassword = async () => {
                     const email = emailRef.current.value;
                     if (email) {
@@ -52,8 +50,6 @@ const Login = () => {
                     }
           }
 
-
-          // navigate register page
           const navigateToRegister = event => {
                     navigate('/register');
           }

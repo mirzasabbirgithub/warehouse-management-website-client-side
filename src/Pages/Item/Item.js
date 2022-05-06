@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Item = ({ item }) => {
-          const { id, name, img, description, price } = item;
+          const { _id, name, img, description, price } = item;
           const navigate = useNavigate();
 
-          const navigateToCheckout = () => {
-                    navigate(`/inventory`);
+          const navigateToCheckout = id => {
+                    navigate(`/inventory/${id}`);
           }
 
           return (
@@ -18,7 +18,7 @@ const Item = ({ item }) => {
                                                   <h5 className="card-title">{name}</h5>
                                                   <p className="card-text">Price:{price} BDT</p>
                                                   <p className="card-text">Description:{description}</p>
-                                                  <button onClick={() => navigateToCheckout()} className='btn btn-success'>Stock Update</button>
+                                                  <button onClick={() => navigateToCheckout(_id)} className='btn btn-success'>Stock Update</button>
                                         </div>
                               </div >
                     </div >
