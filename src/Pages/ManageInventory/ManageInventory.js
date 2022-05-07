@@ -1,5 +1,4 @@
 import React from 'react';
-import useData from '../Hooks/useData';
 const ManageInventory = ({ item, handleDelete }) => {
           const { _id, name, img, description, price } = item;
 
@@ -9,8 +8,8 @@ const ManageInventory = ({ item, handleDelete }) => {
                                         < img className='card-img-top' src={img} alt="" />
                                         <div class="card-body">
                                                   <h5 className="card-title">{name}</h5>
-                                                  <p className="card-text">Price:{price} BDT</p>
-                                                  <p className="card-text">Description:{description}</p>
+                                                  <p className="card-text">Price: {price} BDT</p>
+                                                  <p className="card-text">Description: {description}</p>
                                                   <button onClick={() => handleDelete(item._id)} className='btn btn-success'>Delete</button>
                                         </div>
                               </div >
