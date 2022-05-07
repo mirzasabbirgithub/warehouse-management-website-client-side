@@ -6,6 +6,7 @@ const ManageInventories = () => {
           const [items, setItems] = useData([]);
           return (
                     <div className='container' >
+                              <h3 className='mt-2'>Total Items: {items.length}</h3>
                               <div className="row">
                                         {
                                                   items.map(item => <ManageInventory
