@@ -3,11 +3,15 @@ import { Button } from 'react-bootstrap';
 import { Link, Navigate } from 'react-router-dom';
 import useData from '../Hooks/useData';
 import Item from '../Item/Item';
+import Loading from '../Loading/Loading';
 
 const Items = () => {
 
-          const [items, setItems] = useData([]);
+          const [items, setItems, loading] = useData([]);
 
+          if (loading) {
+                    return <Loading></Loading>
+          }
           const navigateToManageInventories = event => {
                     Navigate('/manageinventories');
           }
