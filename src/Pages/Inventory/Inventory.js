@@ -7,7 +7,7 @@ const Inventory = () => {
           const [item, setItem] = useState({});
 
           useEffect(() => {
-                    const url = `http://localhost:5000/item/${itemId}`;
+                    const url = `https://blooming-wave-81568.herokuapp.com/item/${itemId}`;
                     fetch(url)
                               .then(res => res.json())
                               .then(data => setItem(data));
@@ -21,7 +21,7 @@ const Inventory = () => {
                     const NewQuantity = { result };
 
 
-                    const url = `http://localhost:5000/item/${itemId}`;
+                    const url = `https://blooming-wave-81568.herokuapp.com/item/${itemId}`;
                     fetch(url, {
                               method: "PUT",
                               headers: {
@@ -46,7 +46,7 @@ const Inventory = () => {
                     const result = previousQuantity + reStock;
                     const updateStock = { result };
 
-                    const url = `http://localhost:5000/item/${itemId}`;
+                    const url = `https://blooming-wave-81568.herokuapp.com/item/${itemId}`;
                     fetch(url, {
                               method: "PUT",
                               headers: {

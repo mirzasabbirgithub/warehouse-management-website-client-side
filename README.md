@@ -1,3 +1,14 @@
+## Project Name: Books Warehouse
+## Live Website Link: https://books-warehouse-510d4.web.app/
+Short Discription: It's a Book Warehouse management system site, User can access some features to maintain their store or else.
+
+## Features and Functionalities
+* Add Item 
+* Delete Item
+* Update Item
+* Authentication System
+* Fully Responsive Site
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
