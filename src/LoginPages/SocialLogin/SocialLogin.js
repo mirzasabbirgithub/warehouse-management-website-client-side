@@ -2,15 +2,23 @@ import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../../Pages/Loading/Loading';
 const SocialLogin = () => {
           const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
           const navigate = useNavigate();
 
           let getError;
-
+          //navigeting
           if (user) {
                     navigate('/home');
           }
+
+          //loading spinner
+          if (loading) {
+                    return <Loading></Loading>
+          }
+
+          //show error message
           if (error) {
                     getError = <div>
                               <p className='text-danger'>{error.message}</p>

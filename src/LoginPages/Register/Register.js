@@ -3,15 +3,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Pages/Loading/Loading';
 const Register = () => {
           const [
                     createUserWithEmailAndPassword,
+                    loading,
           ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
           const navigate = useNavigate();
           const navigateToRegister = () => {
                     navigate('/login');
           }
 
+
+          //loading spinner
+          if (loading) {
+                    return <Loading></Loading>
+          }
 
           const handleToRegister = event => {
                     event.preventDefault();

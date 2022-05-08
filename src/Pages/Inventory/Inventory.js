@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 const Inventory = () => {
           const { itemId } = useParams();
           const [item, setItem] = useState({});
-          const [sold, setSold] = useState();
 
           useEffect(() => {
                     const url = `http://localhost:5000/item/${itemId}`;

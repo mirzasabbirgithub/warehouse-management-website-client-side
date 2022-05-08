@@ -5,6 +5,7 @@ import MyItem from '../MyItem/MyItem';
 const MyItems = () => {
           const [items, setItems] = useData([]);
 
+          //handle delete button
           const handleDelete = id => {
                     const proceed = window.confirm('Are you sure to detele the item?');
                     if (proceed) {

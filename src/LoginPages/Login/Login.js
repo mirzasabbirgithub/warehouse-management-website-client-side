@@ -6,13 +6,13 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Pages/Loading/Loading';
 
 const Login = () => {
           const emailRef = useRef('');
           const passwordRef = useRef('');
           const navigate = useNavigate();
           // const location = useLocation();
-
           // let from = location.state?.from?.pathname || "/";
           const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
           let getError;
@@ -23,9 +23,9 @@ const Login = () => {
                     error,
           ] = useSignInWithEmailAndPassword(auth);
 
+          //loading spinner
           if (loading || sending) {
-                    toast('Loading');
-                    return;
+                    return <Loading></Loading>;
           }
 
           if (user) {
