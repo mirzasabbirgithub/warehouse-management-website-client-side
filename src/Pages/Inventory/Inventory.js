@@ -77,9 +77,9 @@ const Inventory = () => {
                                                   <Button onClick={handleDelivered} className='mb-2' variant="primary">Delivered</Button><br></br>
 
                                                   <form>
-                                                            <input ref={quantityRef} type="number" name="quantity" placeholder='Quantity' required />
+                                                            <input ref={quantityRef} type="number" name="Restock Quantity" placeholder='Restock Quantity' required />
                                                             <br />
-                                                            <input onClick={handleRestock} type="submit" value="Update Quantity" />
+                                                            <input onClick={handleRestock} className='btn btn-info text-white mt-2' type="submit" value="Restock Quantity" />
                                                   </form>
 
                                         </Card.Body>
