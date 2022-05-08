@@ -1,6 +1,7 @@
-import React from 'react';
-const ManageInventory = ({ item, handleDelete }) => {
+import React, { useRef } from 'react';
+const ManageInventory = ({ id, item, handleDelete }) => {
           const { _id, name, img, description, price } = item;
+
 
           return (
                     <div className="card g-5 col-sm-12 col-md-6 col-lg-4">

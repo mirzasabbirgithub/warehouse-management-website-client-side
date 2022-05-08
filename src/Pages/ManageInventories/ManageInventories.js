@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { toast } from 'react-toastify';
 import useData from '../Hooks/useData';
 import ManageInventory from '../ManageInventory/ManageInventory';
 import MyItem from '../MyItem/MyItem';
 
 const ManageInventories = () => {
           const [items, setItems] = useData([]);
+
 
           const handleDelete = id => {
                     const proceed = window.confirm('Are you sure to detele the item?');
