@@ -1,9 +1,8 @@
 import React from 'react';
 import useData from '../Hooks/useData';
-import ManageInventory from '../ManageInventory/ManageInventory';
 import MyItem from '../MyItem/MyItem';
 
-const ManageInventories = () => {
+const MyItems = () => {
           const [items, setItems] = useData([]);
 
           const handleDelete = id => {
@@ -23,20 +22,19 @@ const ManageInventories = () => {
           }
           return (
                     <div className='container' >
+                              <h2 className='text-success'>My Item Page</h2>
                               <h3 className='mt-2'>Total Items: {items.length}</h3>
                               <div className="row">
                                         {
-                                                  items.map(item => <ManageInventory
+                                                  items.map(item => <MyItem
                                                             key={item.id}
                                                             item={item}
                                                             handleDelete={handleDelete}
                                                   >
-                                                  </ManageInventory>)
-
+                                                  </MyItem>)
                                         }
                               </div>
                     </div >
           );
 };
-
-export default ManageInventories;
+export default MyItems;
